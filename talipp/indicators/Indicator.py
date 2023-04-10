@@ -1,24 +1,28 @@
-from dataclasses import is_dataclass
+from __future__ import annotations
+
 from abc import ABCMeta, abstractmethod
-from typing import List, Any, Callable, Dict, Union
 from collections import defaultdict
 from collections.abc import MutableSequence, Sequence
+from dataclasses import is_dataclass
 from itertools import chain
-from operator import methodcaller, attrgetter
+from operator import attrgetter, methodcaller
+from typing import Any, Callable, Dict, Generic, List, Optional, TypeVar, Union
 
 ListAny = List[Any]
 ManagedSequenceType = Union['Indicator', MutableSequence]
 ValueExtractorType = Callable[..., Any]
+IndicatorInput = TypeVar('IndicatorInput')
+IndicatorOutput = TypeVar('IndicatorOutput')
 
 
-class Indicator(Sequence):
+class Indicator(Sequence, Generic[IndicatorInput, IndicatorOutput]):
     __metaclass__ = ABCMeta
 
-    def __init__(self, value_extractor: ValueExtractorType = None):
+    def __init__(self, value_extractor: Optional[ValueExtractorType] = None):
         self.value_extractor = value_extractor
 
-        self.input_values: ListAny = []
-        self.output_values: ListAny = []
+        self.input_values: List[IndicatorInput] = []
+        self.output_values: List[IndicatorOutput] = []
         self.managed_sequences: List[ManagedSequenceType] = []
         self.sub_indicators: List[Indicator] = []
         self.output_listeners: List[Indicator] = []
@@ -36,13 +40,13 @@ class Indicator(Sequence):
     def __str__(self):
         return str(self.output_values)
 
-    def add_sub_indicator(self, indicator: 'Indicator') -> None:
+    def add_sub_indicator(self, indicator: Indicator) -> None:
         self.sub_indicators.append(indicator)
 
     def add_managed_sequence(self, lst: ManagedSequenceType) -> None:
         self.managed_sequences.append(lst)
 
-    def initialize(self, input_values: ListAny = None, input_indicator: 'Indicator' = None) -> None:
+    def initialize(self, input_values: Optional[List[IndicatorInput]] = None, input_indicator: Optional[Indicator] = None) -> None:
         if input_values is not None and input_indicator is not None:
             raise Exception('Indicator cannot be initialized with both input_values and input_indicator!')
 
@@ -58,7 +62,7 @@ class Indicator(Sequence):
 
             input_indicator.add_output_listener(self)
 
-    def add_input_value(self, value: Any) -> None:
+    def add_input_value(self, value: List[IndicatorInput]|IndicatorInput) -> None:
         for sub_indicator in self.sub_indicators:
             sub_indicator.add_input_value(value)
 
