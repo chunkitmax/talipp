@@ -3,7 +3,7 @@
 # Creation Date: Sun Jun 06 19:55:00 IST 2021
 # =============================================================================
 
-from typing import List, Any
+from typing import Any, List
 
 from talipp.indicators.Indicator import Indicator
 from talipp.ohlcv import OHLCV

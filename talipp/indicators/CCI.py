@@ -1,4 +1,4 @@
-from typing import List, Any
+from typing import Any, List
 
 from talipp.indicators.Indicator import Indicator
 from talipp.indicators.MeanDev import MeanDev

@@ -1,7 +1,7 @@
 from dataclasses import dataclass
-from itertools import zip_longest
-from typing import List, Dict, Optional
 from datetime import datetime
+from itertools import zip_longest
+from typing import Dict, List, Optional
 
 
 @dataclass

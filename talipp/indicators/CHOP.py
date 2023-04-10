@@ -1,8 +1,8 @@
 from math import log10
-from typing import List, Any
+from typing import Any, List
 
-from talipp.indicators.Indicator import Indicator
 from talipp.indicators.ATR import ATR
+from talipp.indicators.Indicator import Indicator
 from talipp.ohlcv import OHLCV
 
 

@@ -1,6 +1,6 @@
 import enum
-from typing import List, Any
 from dataclasses import dataclass
+from typing import Any, List
 
 from talipp.indicators.Indicator import Indicator
 from talipp.ohlcv import OHLCV

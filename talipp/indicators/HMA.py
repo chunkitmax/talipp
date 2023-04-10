@@ -1,6 +1,6 @@
-from typing import List, Any
-
 from math import sqrt
+from typing import Any, List
+
 from talipp.indicators.Indicator import Indicator
 from talipp.indicators.WMA import WMA
 

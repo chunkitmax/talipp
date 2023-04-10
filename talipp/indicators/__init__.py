@@ -29,10 +29,10 @@ from .MassIndex import MassIndex as MassIndex
 from .McGinleyDynamic import McGinleyDynamic as McGinleyDynamic
 from .MeanDev import MeanDev as MeanDev
 from .OBV import OBV as OBV
+from .ParabolicSAR import ParabolicSAR as ParabolicSAR
 from .PivotsHL import PivotsHL as PivotsHL
 from .ROC import ROC as ROC
 from .RSI import RSI as RSI
-from .ParabolicSAR import ParabolicSAR as ParabolicSAR
 from .SFX import SFX as SFX
 from .SMA import SMA as SMA
 from .SMMA import SMMA as SMMA

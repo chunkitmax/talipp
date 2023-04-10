@@ -1,7 +1,7 @@
-from typing import List, Any
+from math import exp
+from typing import Any, List
 
 from talipp.indicators.Indicator import Indicator
-from math import exp
 
 
 class ALMA(Indicator):

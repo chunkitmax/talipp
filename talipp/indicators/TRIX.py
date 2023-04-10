@@ -1,7 +1,7 @@
-from typing import List, Any
+from typing import Any, List
 
-from talipp.indicators.Indicator import Indicator, ValueExtractorType
 from talipp.indicators.EMA import EMA
+from talipp.indicators.Indicator import Indicator, ValueExtractorType
 
 
 class TRIX(Indicator):

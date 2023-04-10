@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import List, Any
+from typing import Any, List
 
 from talipp.indicators.Indicator import Indicator, ValueExtractorType
 from talipp.indicators.SMA import SMA

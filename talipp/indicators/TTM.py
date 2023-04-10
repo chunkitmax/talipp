@@ -1,8 +1,8 @@
 from dataclasses import dataclass
-from typing import List, Any
+from typing import Any, List
 
+from talipp.indicators import BB, SMA, DonchianChannels, KeltnerChannels
 from talipp.indicators.Indicator import Indicator
-from talipp.indicators import BB, DonchianChannels, KeltnerChannels, SMA
 from talipp.ohlcv import OHLCV, ValueExtractor
 
 
