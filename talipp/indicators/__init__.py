@@ -50,6 +50,7 @@ from .VTX import VTX as VTX
 from .VWAP import VWAP as VWAP
 from .VWMA import VWMA as VWMA
 from .WMA import WMA as WMA
+from .ZLEMA import ZLEMA as ZLEMA
 
 __all__ = (
     "AccuDist",
@@ -104,4 +105,5 @@ __all__ = (
     "VWAP",
     "VWMA",
     "WMA",
+    "ZLEMA",
 )
